@@ -1,0 +1,33 @@
+---
+title: "Developing Data Products - Week 2 Assignment - India's Monuments"
+author: "Rucha Potkar"
+date: "2024-07-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Description of Assignment
+
+The assignment is to create a web page using R Markdown that features a map created with Leaflet. For this assignment, I have I have created an interactive map showing 5 famous monuments across India using the leafet package in R namely; India Gate, Statue of Unity, Taj Mahal, Red Fort, Golden Temple, Meenakshi Temple, Gateway Of India, and Konak Sun temple
+
+```{r cars, echo=TRUE}
+library(knitr)
+library(leaflet)
+library(dplyr)
+India_monuments <- leaflet() %>%
+  addTiles() %>%
+  addMarkers(lat=28.6129, lng=77.2295, popup="India Gate, Delhi") %>%
+  addMarkers(lat=21.8385,lng=73.7192, popup="Statue of Unity, Gujarat") %>%
+  addMarkers(lat=27.1751,lng=78.0421, popup="Taj Mahal, Agra") %>%
+  addMarkers(lat=28.6562,lng=77.2410, popup="Red Fort, Delhi") %>%
+  addMarkers(lat=31.6200,lng=74.8765, popup="Golden Temple, Punjab") %>%
+  addMarkers(lat=9.9195,lng=78.1193, popup="Meenakshi Temple, Tamil Nadu") %>%
+  addMarkers(lat=18.9220,lng=72.8347, popup="Gateway of India, Mumbai") %>%
+  addMarkers(lat=19.8876,lng=86.0945, popup="Konark Sun Temple, Odisha")
+  
+India_monuments
+```
+
